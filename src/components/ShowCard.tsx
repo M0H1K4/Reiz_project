@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Heart } from 'lucide-react';
 import { useFavorites } from '../context/FavoriteContext';
@@ -15,7 +15,7 @@ function ShowCard({ show }: ShowCardProps) {
     <div className="show-card">
       <div className="show-card-header">
         <Link to={`/show/${show.id}`}>
-          {show.image && (
+          {show.image?.medium && (
             <img 
               src={show.image.medium} 
               alt={show.name}
