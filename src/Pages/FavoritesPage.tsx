@@ -25,7 +25,7 @@ function FavoritesPage() {
   }
 
   return (
-    <div className="container">
+    <div className="container_favorites">
       <h1 className="title">My Favorites</h1>
       {favoriteShows.length === 0 ? (
         <div className="no-favorites">

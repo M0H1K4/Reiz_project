@@ -29,7 +29,7 @@ function SearchPage() {
   };
 
   return (
-    <div className="container">
+    <div className="containe-search">
       <h1 className="title">Search TV Shows</h1>
       
       <form onSubmit={handleSearch} className="search-form">
