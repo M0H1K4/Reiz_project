@@ -50,7 +50,7 @@ body {
   /* margin-top: 200px; */
   padding: 2rem;
   /* background-color: green; */
-  width: 700px;
+  min-width: 100vw;
 }
 
 .loading-container {
