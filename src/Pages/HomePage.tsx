@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Sun, Moon, Tv } from 'lucide-react';
+import {  Tv } from 'lucide-react';
 import ShowCard from '../components/ShowCard';
-import { useTheme } from '../context/ThemeContext';
+// import { useTheme } from '../context/ThemeContext';
 import type { Show } from '../types';
 
 const SHOWS_PER_PAGE = 12;
@@ -15,7 +15,7 @@ function HomePage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedGenre, setSelectedGenre] = useState<string>('all');
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
-  const { theme, toggleTheme } = useTheme();
+  // const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     fetch('https://api.tvmaze.com/shows')
@@ -60,14 +60,7 @@ function HomePage() {
   }
 
   return (
-    <div className="home-container">
-        <button onClick={toggleTheme} className="theme-toggle">
-          {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-        </button>
-      <div className="header">
-        <h1 className="title">Popular TV Shows</h1>
-      </div>
-
+    <div className="home-container"> 
       <div className="content-wrapper">
         <div className="filters">
           <div className="filter-section">
