@@ -20,4 +20,7 @@ export interface Show {
     time: string;
     days: string[];
   };
+  officialSite?: string;  // Added official site
+  averageRuntime?: number; // Added average runtime
+  language?: string; // Added language
 }
