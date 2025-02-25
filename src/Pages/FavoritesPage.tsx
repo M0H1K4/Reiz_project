@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { useFavorites } from '../context/FavoriteContext';
 import ShowCard from '../components/ShowCard';
 import { useEffect, useState } from 'react';

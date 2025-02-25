@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Sun, Moon, Tv } from 'lucide-react';
 import ShowCard from '../components/ShowCard';
 import { useTheme } from '../context/ThemeContext';
