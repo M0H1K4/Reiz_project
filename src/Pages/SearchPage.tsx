@@ -31,7 +31,6 @@ function SearchPage() {
   return (
     <div className="containe-search">
       <h1 className="title">Search TV Shows</h1>
-      
       <form onSubmit={handleSearch} className="search-form">
         <input
           type="text"
@@ -57,7 +56,7 @@ function SearchPage() {
         <div className="search-results">
           <div className="shows-grid">
             {shows.map(show => (
-              <div key={show.id} className="show-card">
+              <div key={show.id} className="show-card_2">
                 <Link to={`/show/${show.id}`} className="show-link">
                   {show.image && (
                     <img 
