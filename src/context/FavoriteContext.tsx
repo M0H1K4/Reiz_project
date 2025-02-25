@@ -1,10 +1,9 @@
-import{ createContext, useContext, useEffect, useState } from 'react';
-// import type { Show } from '../types';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 interface FavoritesContextType {
   favorites: number[];
   toggleFavorite: (showId: number) => void;
-  isFavorite: (showId: number) => void;
+  isFavorite: (showId: number) => boolean; // Make sure this returns a boolean
 }
 
 const FavoritesContext = createContext<FavoritesContextType | undefined>(undefined);
@@ -27,7 +26,8 @@ export function FavoritesProvider({ children }: { children: React.ReactNode }) {
     );
   };
 
-  const isFavorite = (showId: number) => favorites.includes(showId);
+  // Ensure this function returns a boolean
+  const isFavorite = (showId: number): boolean => favorites.includes(showId);
 
   return (
     <FavoritesContext.Provider value={{ favorites, toggleFavorite, isFavorite }}>
