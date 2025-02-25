@@ -1,14 +1,16 @@
 // import React from 'react';
 import { Link } from 'react-router-dom';
-import { Tv, Search, Heart } from 'lucide-react';
+import {  Search, Heart } from 'lucide-react';
+import logo from '../assets/LOGO.png'
 
 function Navbar() {
   return (
     <nav className="navbar">
+      this is navbar beach
       <div className="nav-content">
         <Link to="/" className="nav-logo">
-          <Tv size={24} />
-          <span>TV Shows</span>
+          {/* <Tv size={24} /> */}
+          <img src={logo} className='logonio' alt="" />
         </Link>
         <div className="nav-links">
           <Link to="/" className="nav-link">Home</Link>

@@ -11,6 +11,7 @@ function ShowCard({ show }: ShowCardProps) {
   const { isFavorite, toggleFavorite } = useFavorites();
 
   return (
+    
     <div className="show-card">
       <div className="show-card-header">
         <Link to={`/show/${show.id}`}>
@@ -26,7 +27,7 @@ function ShowCard({ show }: ShowCardProps) {
           className={`favorite-button ${isFavorite(show.id) ? 'active' : ''}`}
           onClick={() => toggleFavorite(show.id)}
         >
-          <Heart size={20} />
+          <Heart className='heartImg' size={20} />
         </button>
       </div>
       <div className="show-content">

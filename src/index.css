@@ -12,7 +12,7 @@
   --genre-text: #0369a1;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --bg-primary: #1a1a1a;
   --bg-secondary: #2d2d2d;
   --text-primary: #ffffff;
@@ -32,8 +32,8 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
@@ -42,8 +42,15 @@ body {
 
 /* Layout */
 .container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+  /* margin-top: 200px; */
   padding: 2rem;
+  /* background-color: green; */
+  width: 700px;
 }
 
 .loading-container {
@@ -59,8 +66,12 @@ body {
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .error-message {
@@ -75,6 +86,7 @@ body {
   padding: 1rem 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
+  /* position: relative; */
   top: 0;
   z-index: 100;
 }
@@ -115,14 +127,20 @@ body {
 }
 
 .theme-toggle {
+  /* position: absolute; */
+  overflow: hidden;
+  display: inline;
+  margin-top: -200px;
+  /* top: 10%;
+  left: 25%; */
   background: none;
   border: none;
   color: var(--text-secondary);
   cursor: pointer;
   padding: 0.5rem;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   transition: color 0.2s ease;
 }
 
@@ -200,21 +218,130 @@ body {
 
 /* Show card */
 .show-card {
-  background: var(--bg-secondary);
-  border-radius: 8px;
+  /* background: var(--bg-secondary);
+  border-radius: 12px; 
   overflow: hidden;
   box-shadow: var(--card-shadow);
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer; */
 }
 
 .show-card:hover {
-  transform: translateY(-4px);
+  transform: scale(1.05); /* Smooth zoom effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
+
+.show-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  width: 200px;
+  height: 200px; /* Fixed height for consistency */
+  overflow: hidden;
+  /* background-color: red; */
+}
+
+.show-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area without stretching */
+  border-radius: 8px 8px 0 0; /* Rounded top corners */
+  transition: transform 0.3s ease;
+}
+
+.show-card-header:hover .show-image {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.favorite-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  transition: background 0.3s ease;
+}
+
+.favorite-button:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.heartImg {
+  color: var(--primary-color); /* Ensure the heart icon has a consistent color */
+}
+
+.show-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1; /* Ensures content grows appropriately */
+}
+
+.show-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  transition: color 0.2s ease;
+}
+
+.show-title:hover {
+  color: var(--primary-color);
+}
+
+.genres-container {
+  margin: 8px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.genre-tag {
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  text-transform: capitalize;
+}
+
+.show-rating {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 8px 0;
+}
+
+.show-summary {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
 
 .show-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.show-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .show-content {
@@ -364,3 +491,19 @@ body {
   border-color: var(--border-color);
   cursor: not-allowed;
 }
+
+.logonio {
+  width: 60px;
+  height: 60px;
+}
+.filter-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.heartImg {
+  background: none;
+  border: none;
+}
+
+

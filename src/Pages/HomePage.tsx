@@ -61,11 +61,11 @@ function HomePage() {
 
   return (
     <div className="home-container">
-      <div className="header">
-        <h1 className="title">Popular TV Shows</h1>
         <button onClick={toggleTheme} className="theme-toggle">
           {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
         </button>
+      <div className="header">
+        <h1 className="title">Popular TV Shows</h1>
       </div>
 
       <div className="content-wrapper">
